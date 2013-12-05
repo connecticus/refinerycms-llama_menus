@@ -1,0 +1,40 @@
+ <fieldset class='nested' data-nested-item='true' data-sortable-item='true'>
+   <%= refinery_icon_tag 'arrow_switch', 'data-handle' => true, :title => 'Reorder', :class => 'handle' %>
+   <%= f.hidden_field :position, 'data-position' => true %>
+  <div class='field'>
+    <span class='label_with_help'>
+      <%= f.label :label %>
+      <%= refinery_help_tag t('refinery.menus.admin.tooltips.label') %>
+    </span>
+    <%= f.text_field :label %>
+  </div>
+  <div class='field'>
+    <span class='label_with_help'>
+      <%= f.label :url %>
+      <%= refinery_help_tag t('refinery.menus.admin.tooltips.url') %>
+    </span>
+    <%= f.text_field :url %>
+  </div>
+
+  <% if Refinery::Menus.linkable_classes.any? %>
+    <% if Refinery::Menus.linkable_classes.many? %>
+      <div class='field'>
+        <span class='label_with_help'>
+          <%= f.label :linkable_type %>
+          <%= refinery_help_tag t('refinery.menus.admin.tooltips.linkable_type') %>
+        </span>
+      </div>
+    <% else %>
+      <%= f.hidden_field :linkable_type, value: Refinery::Menus.linkables.first.class_name %>
+    <% end %>
+    <div class='field'>
+      <%= f.label :linkable_id %>
+      <% Refinery::Menus.linkable_classes.each do |linkable_class| %>
+        <%= f.select :linkable_id, options_for_select_from_linkable_class(linkable_class) %>
+      <% end %>
+    </div>
+  <% end %>
+
+  
+  <%= link_to_remove_field 'Remove this menu item', f %>
+</fieldset>

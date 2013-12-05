@@ -1,0 +1,7 @@
+.field 
+  = f.label :menu_id
+  = f.collection_select :menu_id, Refinery::Menus::Menu.order(:position), :id, :name
+
+.field 
+  = f.label :style
+  = f.select :style, [['Top navigation', 'top'], ['Footer', 'footer']]

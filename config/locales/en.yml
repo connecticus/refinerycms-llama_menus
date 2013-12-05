@@ -1,0 +1,36 @@
+en:
+  refinery:
+    plugins:
+      menus:
+        title: Menus
+    menus:
+      admin:
+        tooltips:
+          label: Text which shows in the menu for this link.
+          url: 'If you would like to link to an external resource enter the full url (including protocol - e.g. http:// or https://) here.'
+          linkable_type: If you would like to link to something on the site select the type of ofject you would like to link to. 
+        menus:
+          actions:
+            create_new: Add New Menu
+            reorder: Reorder Menus
+            reorder_done: Done Reordering Menus
+          records:
+            title: Menus
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Menus yet. Click "Add New Menu" to add your first menu.
+          menu:
+            view_live_html: View this menu live <br/><em>(opens in a new window)</em>
+            edit: Edit this menu
+            delete: Remove this menu forever
+      menus:
+        show:
+          other: Other Menus
+  activerecord:
+    attributes:
+      'refinery/menus/menu':
+        name: Name
+        style: Style
+      'refinery/menus/menu_item':
+        url: External URL
+        linkable_type: Internal link category
+        linkable_id: Internal link
