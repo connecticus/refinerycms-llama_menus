@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
-  s.name              = 'refinerycms-menus'
+  s.name              = 'refinerycms-llama_menus'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Menus extension for Refinery CMS'
   s.date              = '2013-11-28'
