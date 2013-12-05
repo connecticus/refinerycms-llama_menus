@@ -12,4 +12,4 @@ nav.navbar.navbar-default role='navigation'
       ul.nav.navbar-nav
         - Refinery::Menus::MenuItemDecorator.decorate_collection(widget.menu_widget.menu.menu_items.order(:position)).each do |menu_item|
           li
-            = link_to menu_item.label, menu_item.url
+            = link_to menu_item.label, menu_item.url(refinery)

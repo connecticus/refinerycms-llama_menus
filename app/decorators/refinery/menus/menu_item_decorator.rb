@@ -4,11 +4,15 @@ module Refinery
 
       delegate_all
 
-      def url
+      def url(routing_proxy=nil)
         if object.url?
           object.url
         elsif object.linkable
-          object.linkable
+          if routing_proxy.present?
+            [routing_proxy, object.linkable]
+          else
+            object.linkable
+          end
         else
           ''
         end
