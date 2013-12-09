@@ -8,7 +8,7 @@ module Refinery
       belongs_to :menu, class_name: 'Refinery::Menus::Menu'
       belongs_to :linkable, polymorphic: true
 
-      validates :label, :menu, :presence => true
+      validates :label, :presence => true
       validates :linkable, :presence => {:unless => 'url?'}
       validates :url, :presence => {:unless => 'linkable_type?'}
 
