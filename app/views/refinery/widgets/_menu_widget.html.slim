@@ -11,5 +11,5 @@ nav.navbar.navbar-default role='navigation'
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav
         - Refinery::Menus::MenuItemDecorator.decorate_collection(widget.menu_widget.menu.menu_items.order(:position)).each do |menu_item|
-          li
+          li class=('active' if current_page?(menu_item.url(refinery)))
             = link_to menu_item.label, menu_item.url(refinery)
