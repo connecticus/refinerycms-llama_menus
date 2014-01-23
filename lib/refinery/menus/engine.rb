@@ -23,6 +23,10 @@ module Refinery
         Refinery.register_extension(Refinery::Menus)
       end
 
+      Refinery::Core.configure do |config| #   # Register extra javascript for backend
+        config.register_stylesheet "refinery/menus", :media => 'screen'
+      end
+
       config.to_prepare do
         Dir["#{File.dirname(__FILE__)}/../../../app/helpers/**/*.rb"].each { |f| load(f) }
         Dir["#{File.dirname(__FILE__)}/../../../app/decorators/**/*.rb"].each { |f| load(f) }
