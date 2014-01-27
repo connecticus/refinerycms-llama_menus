@@ -12,3 +12,11 @@ nav.navbar.navbar-default role='navigation'
         - Refinery::Menus::MenuItemDecorator.decorate_collection(widget.menu_widget.menu.menu_items.order(:position)).each do |menu_item|
           li class=('active' if current_page?(menu_item.url(refinery)))
             = link_to menu_item.label, menu_item.url(refinery)
+          - if current_page?(menu_item.url(refinery))
+            - content_for :sub_menu do
+              .collapse.navbar-collapse#bs-example-navbar-collapse-2
+                ul.nav.navbar-nav
+                  - Refinery::Menus::MenuItemDecorator.decorate_collection(menu_item.menu_items.order(:position)).each do |sub_menu_item|
+                    = content_tag :li, class: ('active' if @page && @page.try(:self_and_ancestors).try(:include?, sub_menu_item.linkable)) do
+                      = link_to sub_menu_item.label, sub_menu_item.url(refinery)
+    = yield :sub_menu

@@ -3,9 +3,8 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-llama_menus'
-  s.version           = '1.0.7'
+  s.version           = '1.1.0'
   s.description       = 'Ruby on Rails Menus extension for Refinery CMS'
-  s.date              = '2013-11-28'
   s.summary           = 'Menus extension for Refinery CMS'
   s.require_paths     = %w(lib)
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]

@@ -9,7 +9,7 @@ module Refinery
 
       validates :name, :presence => true, :uniqueness => true
 
-      has_many :menu_items, class_name: 'Refinery::Menus::MenuItem', dependent: :destroy
+      has_many :menu_items, as: :menuable, class_name: 'Refinery::Menus::MenuItem', dependent: :destroy
       accepts_nested_attributes_for :menu_items, allow_destroy: true
     end
   end
