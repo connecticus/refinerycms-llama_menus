@@ -8,8 +8,6 @@ module Refinery
 
       acts_as_widget 
 
-      attr_accessible :style, :menu_id, :widget_id
-
     end
   end
 end

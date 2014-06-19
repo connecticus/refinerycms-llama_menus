@@ -3,8 +3,6 @@ module Refinery
     class Menu < Refinery::Core::BaseModel
       self.table_name = 'refinery_menus'
 
-      attr_accessible :name, :style, :position, :menu_items_attributes
-
       acts_as_indexed :fields => [:name]
 
       validates :name, :presence => true, :uniqueness => true
