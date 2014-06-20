@@ -3,12 +3,12 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-llama_menus'
-  s.version           = '2.0.0'
+  s.version           = '1.2.0'
   s.description       = 'Ruby on Rails Menus extension for Refinery CMS'
   s.summary           = 'Menus extension for Refinery CMS'
   s.require_paths     = %w(lib)
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
-  s.authors           = ['Nick Bolt']
+  s.authors           = ['Nick Bolt', 'Daniel King']
   s.homepage          = 'https://github.com/ShadowKoBolt/refinerycms-llama_menus'
 
   # Runtime dependencies
