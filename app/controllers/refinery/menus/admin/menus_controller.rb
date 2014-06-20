@@ -7,6 +7,12 @@ module Refinery
                 :title_attribute => 'name',
                 :xhr_paging => true
 
+        private
+
+        def menu_params
+          params.require(:menu).permit!
+        end
+
       end
     end
   end
