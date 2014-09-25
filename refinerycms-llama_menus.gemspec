@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-llama_menus'
-  s.version           = '1.2.0'
+  s.version           = '1.2.1'
   s.description       = 'Ruby on Rails Menus extension for Refinery CMS'
   s.summary           = 'Menus extension for Refinery CMS'
   s.require_paths     = %w(lib)
